@@ -1,0 +1,11 @@
+/Users/karim/Desktop/Umaia/LEI/1ºAno/2ºSemestre/Algoritmos e Estruturas de Dados - Mário Ricardo de Novais Henriques/Trabalho 2/RegistroAutomovel_V1/obj/Debug/net7.0/RegistroAutomovel_V1.csproj.AssemblyReference.cache
+/Users/karim/Desktop/Umaia/LEI/1ºAno/2ºSemestre/Algoritmos e Estruturas de Dados - Mário Ricardo de Novais Henriques/Trabalho 2/RegistroAutomovel_V1/obj/Debug/net7.0/RegistroAutomovel_V1.GeneratedMSBuildEditorConfig.editorconfig
+/Users/karim/Desktop/Umaia/LEI/1ºAno/2ºSemestre/Algoritmos e Estruturas de Dados - Mário Ricardo de Novais Henriques/Trabalho 2/RegistroAutomovel_V1/obj/Debug/net7.0/RegistroAutomovel_V1.AssemblyInfoInputs.cache
+/Users/karim/Desktop/Umaia/LEI/1ºAno/2ºSemestre/Algoritmos e Estruturas de Dados - Mário Ricardo de Novais Henriques/Trabalho 2/RegistroAutomovel_V1/obj/Debug/net7.0/RegistroAutomovel_V1.AssemblyInfo.cs
+/Users/karim/Desktop/Umaia/LEI/1ºAno/2ºSemestre/Algoritmos e Estruturas de Dados - Mário Ricardo de Novais Henriques/Trabalho 2/RegistroAutomovel_V1/obj/Debug/net7.0/RegistroAutomovel_V1.csproj.CoreCompileInputs.cache
+/Users/karim/Desktop/Umaia/LEI/1ºAno/2ºSemestre/Algoritmos e Estruturas de Dados - Mário Ricardo de Novais Henriques/Trabalho 2/RegistroAutomovel_V1/bin/Debug/net7.0/RegistroAutomovel_V1
+/Users/karim/Desktop/Umaia/LEI/1ºAno/2ºSemestre/Algoritmos e Estruturas de Dados - Mário Ricardo de Novais Henriques/Trabalho 2/RegistroAutomovel_V1/bin/Debug/net7.0/RegistroAutomovel_V1.dll
+/Users/karim/Desktop/Umaia/LEI/1ºAno/2ºSemestre/Algoritmos e Estruturas de Dados - Mário Ricardo de Novais Henriques/Trabalho 2/RegistroAutomovel_V1/bin/Debug/net7.0/RegistroAutomovel_V1.pdb
+/Users/karim/Desktop/Umaia/LEI/1ºAno/2ºSemestre/Algoritmos e Estruturas de Dados - Mário Ricardo de Novais Henriques/Trabalho 2/RegistroAutomovel_V1/obj/Debug/net7.0/RegistroAutomovel_V1.dll
+/Users/karim/Desktop/Umaia/LEI/1ºAno/2ºSemestre/Algoritmos e Estruturas de Dados - Mário Ricardo de Novais Henriques/Trabalho 2/RegistroAutomovel_V1/obj/Debug/net7.0/refint/RegistroAutomovel_V1.dll
+/Users/karim/Desktop/Umaia/LEI/1ºAno/2ºSemestre/Algoritmos e Estruturas de Dados - Mário Ricardo de Novais Henriques/Trabalho 2/RegistroAutomovel_V1/obj/Debug/net7.0/RegistroAutomovel_V1.pdb

@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="Modelo\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="Repositorio\RegistroAutomovel.cs" />
+      <Compile Remove="Repositorio\LinkedListNode.cs" />
+      <Compile Remove="Repositorio\LinkedList.cs" />
+      <Compile Remove="EstruturasDeDados\Node.cs" />
+      <Compile Remove="EstruturasDeDados\OrderedLinkedList.cs" />
+      <Compile Remove="Repositorio\RepositorioProprietario.cs" />
+      <Compile Remove="Repositorio\RepositorioVeiculo.cs" />
+      <Compile Remove="Servico\ServicoRegistroAutomovel.cs" />
+      <Compile Remove="Repositorio\IRepositorio.cs" />
+      <Compile Remove="PreData\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="PreData\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="PreData\**" />
+    </ItemGroup>
+
+</Project>

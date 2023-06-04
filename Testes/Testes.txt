@@ -1,0 +1,76 @@
+using RegistroAutomovel_V1.Servico;
+namespace RegistroAutomovel_V1.Testes;
+
+public class Testes
+{
+        
+
+        // adicao de proprietarios na tabela 
+        sv.RegistrarProprietario(123456789, "João Silva", "123456789", new DateTime(1990, 5, 15));
+        sv.RegistrarProprietario(987654321, "Maria Santos", "987654321", new DateTime(1985, 9, 25));
+        
+        // Adição de veículos na tabela
+        sv.RegistrarVeiculo("ABC123", "Renault", "Clio", 2020, DateTime.Now, "Gasolina", "Azul", 5);
+        sv.RegistrarVeiculo("DEF456", "Renault", "Clio", 2018, DateTime.Now, "Diesel", "Preto", 4);
+        sv.RegistrarVeiculo("GHI789", "Seat", "Ibiza", 2015, DateTime.Now, "Gasolina", "Vermelho", 7);
+ 
+        
+        // Obtenção de um veículo da tabela TESTE OK 
+        Console.WriteLine("Veículo obtido: " + sv.veiculoRepositorio.Obter("DEF456"));
+
+        // Remoção de um veículo da tabela TESTE OK 
+        var veiculoRemovido = sv.ObterVeiculo("GHI789");
+        sv.RemoverVeiculo("GHI789");
+        Console.WriteLine("Veículo GHI789 removido? " + (veiculoRemovido != null));
+
+        // Obtenção de todos os veículos da tabela TESTE OK 
+        Console.WriteLine("Todos os veículos no repositório:");
+        foreach (var veiculo in sv.ObterTodosVeiculos())
+        {
+            Console.WriteLine(veiculo);
+        }
+        // Verificar se Veiculo Existe com a Matricula TESTE OK 
+        sv.Existe("ABC123");
+        
+        // Verificar se conseguimos obter veiculo por modelo TEST OK 
+        foreach (var veiculo in sv.EncontrarVeiculosPorModelo("Clio"))
+                {
+                    Console.WriteLine(veiculo);
+                }
+        sv.ObterPorModelo(Modelo2);
+        
+        // Comprar Vehiculo NOVO TESTE OK 
+        sv.ComprarVeiculoNovo(123456789, sv.ObterVeiculo("ABC123"));
+        
+        //Comprar vehiculo em segunda mao TESTE OK  
+        sv.ComprarVeiculoEmSegundaMao(987654321, sv.ObterVeiculo("ABC123"));
+
+        //Verificação encontrar proprietario por nome TESTE OK
+         foreach (var propietario in sv.EncontrarProprietarioPorNome("Santos"))
+                {
+                    Console.WriteLine(propietario);
+                }
+
+        // Verificação se o repositório contém um proprietário com um determinado NIF
+        Console.WriteLine("O repositório contém o proprietário com NIF 123456789? " + sv.ExisteProprietario(123456789));
+        Console.WriteLine("O repositório contém o proprietário com NIF 999999999? " + sv.ExisteProprietario(999999999));
+
+        // Obtenção de um proprietário do repositório
+        Console.WriteLine("Proprietário obtido: " + sv.ObterProprietario(987654321));
+
+        // Remoção de um proprietário do repositório
+        var proprietarioRemovido = sv.ObterProprietario(123456789);
+        sv.RemoverProprietario(123456789);
+        Console.WriteLine("Proprietário com NIF 123456789 removido? " + (proprietarioRemovido != null));
+
+        // Registar Obito do Proprietario
+        sv.RegistrarFalecimentoProprietario(987654321);
+
+        // Obtenção de todos os proprietários do repositório
+        Console.WriteLine("Todos os proprietários no repositório:");
+        foreach (var proprietario in sv.ObterTodosProprietarios())
+        {
+            Console.WriteLine(proprietario);
+        }
+
+}
