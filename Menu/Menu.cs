@@ -1,7 +1,4 @@
-using System;
-using System.Data;
 using System.Globalization;
-using System.IO.Pipes;
 using RegistroAutomovel_V1.Servico;
 
 namespace RegistroAutomovel_V1.Menu
@@ -17,9 +14,11 @@ namespace RegistroAutomovel_V1.Menu
         
             // Adição de veículos na tabela
             registro.RegistrarVeiculo("ABC123", "Renault", "Clio", 2020, DateTime.Now, "Gasolina", "Azul", 5);
+            registro.ObterVeiculo("ABC123").Proprietario = registro.ObterProprietario(123456789);
             registro.RegistrarVeiculo("DEF456", "Renault", "Clio", 2018, DateTime.Now, "Diesel", "Preto", 4);
+            registro.ObterVeiculo("DEF456").Proprietario = registro.ObterProprietario(987654321);
             registro.RegistrarVeiculo("GHI789", "Seat", "Ibiza", 2015, DateTime.Now, "Gasolina", "Vermelho", 7);
-            
+            registro.ObterVeiculo("GHI789").Proprietario = registro.ObterProprietario(123456789);
         }
 
         public void ShowMenu()

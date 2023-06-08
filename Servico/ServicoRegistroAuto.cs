@@ -175,7 +175,7 @@ namespace RegistroAutomovel_V1.Servico
         }
         
         
-        public List<Veiculo> ObterTodosVeiculos()
+        public Veiculo[] ObterTodosVeiculos()
         {
             return veiculoRepositorio.ObterTodos();
         }

@@ -1,11 +1,12 @@
 using System.Collections;
+using RegistroAutomovel_V1.EstruturasDeDados;
 
 namespace RegistroAutomovel_V1.EstruturasDeDados
 {
     public class MyLinkedList<T> : IEnumerable
     {
-        private Nódulo<T> cabeca;
-        private Nódulo<T> cauda;
+        public Nódulo<T> cabeca;
+        public Nódulo<T> cauda;
         private int contador;
 
         public int Contador
@@ -136,6 +137,7 @@ namespace RegistroAutomovel_V1.EstruturasDeDados
             return false;
         }
         
+        
         // Verifica se a lista contém um determinado elemento.
         public bool Contem(Func<T, bool> predicate)
         {
@@ -199,19 +201,7 @@ namespace RegistroAutomovel_V1.EstruturasDeDados
 
             throw new InvalidOperationException("Element not found in the list.");
         }
-        private class Nódulo<T>
-        {
-            public T Data { get; set; }
-            public Nódulo<T> Proximo { get; set; }
-            public Nódulo<T> Anterior { get; set; }
-
-            public Nódulo(T data)
-            {
-                Data = data;
-                Proximo = null;
-                Anterior = null;
-            }
-        }
+        
 
         public IEnumerator GetEnumerator()
         {

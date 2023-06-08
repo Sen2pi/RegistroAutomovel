@@ -6,11 +6,12 @@ namespace RegistroAutomovel_V1.Repositorio;
 public class VeiculoRepositorio : IRepo<Veiculo, string>
 {
     private MyHashTable<string, Veiculo> veiculoTable;
-
+    
     public VeiculoRepositorio()
     {
         veiculoTable = new MyHashTable<string, Veiculo>();
     }
+        
 
     public void Adicionar(Veiculo veiculo)
     {
@@ -23,14 +24,17 @@ public class VeiculoRepositorio : IRepo<Veiculo, string>
         return veiculoTable.Remover(matricula);
     }
     
-    public List<Veiculo> ObterTodos()
+    public Veiculo[] ObterTodos()
     {
-        List<Veiculo> novaLista = new List<Veiculo>();
-        foreach (KeyValuePair<string, Veiculo> veiculo in veiculoTable.ObterTodos())
+        KeyValuePair<string, Veiculo>[] veiculos = veiculoTable.ObterTodos();
+        Veiculo[] resultado = new Veiculo[veiculos.Length];
+
+        for (int i = 0; i < veiculos.Length; i++)
         {
-            novaLista.Add(veiculo.Value);
+            resultado[i] = veiculos[i].Value;
         }
-        return novaLista;
+
+        return resultado;
     }
 
     public Veiculo Obter(string matricula)
@@ -41,6 +45,6 @@ public class VeiculoRepositorio : IRepo<Veiculo, string>
 
     public bool Existe(string matricula)
     {
-        return veiculoTable.ContainsKey(matricula);
+        return veiculoTable.Contem(matricula);
     }
 }

@@ -22,14 +22,17 @@
       <Compile Remove="Servico\ServicoRegistroAutomovel.cs" />
       <Compile Remove="Repositorio\IRepositorio.cs" />
       <Compile Remove="PreData\**" />
+      <Compile Remove="HashGenericas\**" />
     </ItemGroup>
 
     <ItemGroup>
       <EmbeddedResource Remove="PreData\**" />
+      <EmbeddedResource Remove="HashGenericas\**" />
     </ItemGroup>
 
     <ItemGroup>
       <None Remove="PreData\**" />
+      <None Remove="HashGenericas\**" />
     </ItemGroup>
 
 </Project>

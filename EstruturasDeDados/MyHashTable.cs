@@ -1,88 +1,85 @@
-using RegistroAutomovel_V1.Modelo;
-
-namespace RegistroAutomovel_V1.EstruturasDeDados;
-
-using System;
 using System.Collections.Generic;
+using System.Text;
 
-public class MyHashTable<TKey, TValue>
+namespace RegistroAutomovel_V1.EstruturasDeDados
 {
-    private const int tamanho = 10;
-    private KeyValuePair<TKey, TValue>[] caixas;
-
-    public MyHashTable()
+    public class MyHashTable<TKey, TValue>
     {
-        caixas = new KeyValuePair<TKey, TValue>[tamanho];
-    }
+        private const int tam = 10;
+        private const int proxPrimo = 11;
+        private MyLinkedList<KeyValuePair<TKey, TValue>>[] entradas;
 
-    public KeyValuePair<TKey, TValue>[] ObterTodos()
-    {
-        List<KeyValuePair<TKey, TValue>> lista = new List<KeyValuePair<TKey, TValue>>();
-
-        foreach (KeyValuePair<TKey, TValue> par in caixas)
+        public MyHashTable()
         {
-            if (!EqualityComparer<TKey>.Default.Equals(par.Key, default(TKey)))
+            // Inicializar as entradas da tabela de hash
+            entradas = new MyLinkedList<KeyValuePair<TKey, TValue>>[tam];
+            for (int i = 0; i < tam; i++)
+                entradas[i] = new MyLinkedList<KeyValuePair<TKey, TValue>>();
+        }
+
+        
+        public void Adicionar(TKey chave, TValue valor)
+        {
+            int pos = Hash(chave);
+            entradas[pos].AdicionarFinal(new KeyValuePair<TKey, TValue>(chave, valor));
+        }
+
+        public TValue Obter(TKey chave)
+        {
+            int pos = Hash(chave);
+            MyLinkedList<KeyValuePair<TKey, TValue>> listaEncadeada = entradas[pos];
+            foreach (KeyValuePair<TKey, TValue> par in listaEncadeada)
             {
-                lista.Add(par);
+                if (par.Key.Equals(chave))
+                    return par.Value;
             }
+            throw new KeyNotFoundException($"A chave '{chave}' não foi encontrada na tabela de hash.");
         }
 
-        return lista.ToArray();
-    }
-
-    public void Adicionar(TKey key, TValue value)
-    {
-        int index = GetIndex(key);
-
-        if (EqualityComparer<TKey>.Default.Equals(caixas[index].Key, default(TKey)))
+        public KeyValuePair<TKey, TValue>[] ObterTodos()
         {
-            caixas[index] = new KeyValuePair<TKey, TValue>(key, value);
+            List<KeyValuePair<TKey, TValue>> lista = new List<KeyValuePair<TKey, TValue>>();
+            foreach (MyLinkedList<KeyValuePair<TKey, TValue>> listaEncadeada in entradas)
+            {
+                foreach (KeyValuePair<TKey, TValue> par in listaEncadeada)
+                {
+                    lista.Add(par);
+                }
+            }
+            return lista.ToArray();
         }
-        else
+
+        public bool Remover(TKey chave)
         {
-            throw new ArgumentException("An element with the same key already exists in the HashTable.");
+            int pos = Hash(chave);
+            MyLinkedList<KeyValuePair<TKey, TValue>> listaEncadeada = entradas[pos];
+            bool removido = listaEncadeada.Remover(par => par.Key.Equals(chave));
+            return removido;
         }
-    }
 
-    public bool Remover(TKey key)
-    {
-        int index = GetIndex(key);
-
-        if (EqualityComparer<TKey>.Default.Equals(caixas[index].Key, default(TKey)))
+        public bool Contem(TKey chave)
         {
-            return false;
+            int pos = Hash(chave);
+            MyLinkedList<KeyValuePair<TKey, TValue>> listaEncadeada = entradas[pos];
+            bool contem = listaEncadeada.Contem(par => par.Key.Equals(chave));
+            return contem;
         }
-        else
+
+        public override string ToString()
         {
-            caixas[index] = new KeyValuePair<TKey, TValue>();
-            return true;
+            StringBuilder res = new StringBuilder();
+            for (int i = 0; i < tam; i++)
+            {
+                res.AppendLine($" ==> {i}");
+                res.AppendLine(entradas[i].ToString());
+            }
+            return res.ToString();
         }
-    }
 
-    public TValue Obter(TKey key)
-    {
-        int index = GetIndex(key);
-
-        if (EqualityComparer<TKey>.Default.Equals(caixas[index].Key, default(TKey)))
+        private int Hash(TKey chave)
         {
-            throw new KeyNotFoundException("The specified key was not found in the HashTable.");
+            int hashCode = chave.GetHashCode();
+            return (hashCode % proxPrimo) % tam;
         }
-        else
-        {
-            return caixas[index].Value;
-        }
-    }
-
-    public bool ContainsKey(TKey key)
-    {
-        int index = GetIndex(key);
-        return !EqualityComparer<TKey>.Default.Equals(caixas[index].Key, default(TKey));
-    }
-
-    private int GetIndex(TKey key)
-    {
-        int hash = key.GetHashCode();
-        int index = Math.Abs(hash % caixas.Length);
-        return index;
     }
 }
