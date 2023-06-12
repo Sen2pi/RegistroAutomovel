@@ -44,6 +44,7 @@ public class Proprietario
         if (Vehiculos[0] != null) sb.AppendLine($" Veiculo: {Vehiculos[0].Modelo} Matricula: {Vehiculos[0].Matricula}");
         if (Vehiculos[1] != null) sb.AppendLine($" Veiculo: {Vehiculos[1].Modelo} Matricula: {Vehiculos[1].Matricula}");
         if (Vehiculos[2] != null) sb.AppendLine($" Veiculo: {Vehiculos[2].Modelo} Matricula: {Vehiculos[2].Matricula}");
+        
         return sb.ToString();
     }
 }

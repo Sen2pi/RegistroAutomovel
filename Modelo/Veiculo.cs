@@ -4,27 +4,38 @@ namespace RegistroAutomovel_V1.Modelo;
 
 public class Veiculo
 {
-    public string Matricula { get; set; }
-    public string Marca { get; set; }
-    public string Modelo { get; set; }
-    public int AnoConstrucao { get; set; }
-    public DateTime DataInicioCirculacao { get; set; }
-    public Proprietario Proprietario { get; set; }
-    public string Combustivel { get; set; }
-    public string Cor { get; set; }
-    public int Lugares { get; set; }
+    private string matricula;
+    private string marca;
+    private string modelo;
+    private int anoConstrucao;
+    private DateTime dataInicioCirculacao;
+    private Proprietario proprietario;
+    private string combustivel;
+    private string cor;
+    private int lugares;
 
     public Veiculo(string matricula, string marca, string modelo, int anoConstrucao, DateTime dataInicioCirculacao, string combustivel, string cor, int lugares)
     {
-        Matricula = matricula;
-        Marca = marca;
-        Modelo = modelo;
-        AnoConstrucao = anoConstrucao;
-        DataInicioCirculacao = dataInicioCirculacao;
-        Combustivel = combustivel;
-        Cor = cor;
-        Lugares = lugares;
+        this.matricula = matricula;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.anoConstrucao = anoConstrucao;
+        this.dataInicioCirculacao = dataInicioCirculacao;
+        this.combustivel = combustivel;
+        this.cor = cor;
+        this.lugares = lugares;
     }
+    
+    internal string Matricula { get => matricula; set => matricula = value; }
+    internal string Marca { get=> marca; set => marca = value; }
+    internal string Modelo { get => modelo; set => modelo = value; }
+    internal int AnoConstrucao { get=> anoConstrucao; set=> anoConstrucao = value; }
+    internal DateTime DataInicioCirculacao { get=> dataInicioCirculacao; set=> dataInicioCirculacao = value; }
+    internal Proprietario Proprietario { get=> proprietario; set=> proprietario = value; }
+    internal string Combustivel { get => combustivel; set=> combustivel = value; }
+    internal string Cor { get => cor; set => cor = value; }
+    internal int Lugares { get=> lugares; set=> lugares = value; }
+    
     public override string ToString()
     {
         StringBuilder sb = new StringBuilder();
@@ -40,7 +51,6 @@ public class Veiculo
         sb.AppendLine($" Combustível: {Combustivel,-16} ");
         sb.AppendLine($" Cor: {Cor,-22} ");
         sb.AppendLine($" Lugares: {Lugares,-19} ");
-        sb.AppendLine("||==============================||");
 
         return sb.ToString();
     }
