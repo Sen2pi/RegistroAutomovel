@@ -79,7 +79,15 @@ namespace RegistroAutomovel_V1.EstruturasDeDados
         private int Hash(TKey chave)
         {
             int hashCode = chave.GetHashCode();
-            return (hashCode % proxPrimo) % tam;
+            
+            int indice = (hashCode % proxPrimo) % tam;
+
+            if (indice < 0)
+            {
+                indice+=tam;
+            }
+
+            return indice;
         }
     }
 }
