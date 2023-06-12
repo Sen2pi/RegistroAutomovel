@@ -4,23 +4,31 @@ namespace RegistroAutomovel_V1.Modelo;
 
 public class Proprietario
 {
-    public int NIF { get; set; }
-    public string NomeCompleto { get; set; }
-    public string NumeroContacto { get; set; }
-    public DateTime DataNascimento { get; set; }
-    public bool Falecido { get; set; }
 
+    private int nif;
+    private string nomeCompleto;
+    private string numeroContacto;
+    private DateTime dataNascimento;
+    private bool falecido;  
+    
     public Veiculo[] Vehiculos;
 
     public Proprietario(int nif, string nomeCompleto, string numeroContacto, DateTime dataNascimento)
     {
-        NIF = nif;
-        NomeCompleto = nomeCompleto;
-        NumeroContacto = numeroContacto;
-        DataNascimento = dataNascimento;
-        Falecido = false;
+        this.nif = nif;
+        this.nomeCompleto = nomeCompleto;
+        this.numeroContacto = numeroContacto;
+        this.dataNascimento = dataNascimento;
+        this.falecido = false;
         Vehiculos = new Veiculo[3];
     }
+    internal int NIF { get => nif; set => nif = value; }
+    internal string NomeCompleto { get => nomeCompleto; set => nomeCompleto = value; }
+    internal string NumeroContacto { get => numeroContacto; set => numeroContacto = value; }
+    internal DateTime DataNascimento { get => dataNascimento; set => dataNascimento = value; }
+    internal bool Falecido { get => falecido; set => falecido = value; }
+
+    
     
     public override string ToString()
     {

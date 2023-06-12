@@ -1,0 +1,26 @@
+﻿<Properties StartupConfiguration="{3599D803-7FA6-47C4-B6C2-DA207B0B61EA}|Default">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
+    <Files>
+      <File FileName="Menu/Menu.cs" />
+      <File FileName="Program.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="RegistroAutomovel_V1" expanded="True">
+            <Node name="RegistroAutomovel_V1" expanded="True" selected="True">
+              <Node name="Menu" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.RegistroAutomovel__V1 PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

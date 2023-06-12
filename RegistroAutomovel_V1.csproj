@@ -33,6 +33,7 @@
     <ItemGroup>
       <None Remove="PreData\**" />
       <None Remove="HashGenericas\**" />
+      <None Remove="ClassDiagrama.puml" />
     </ItemGroup>
 
 </Project>

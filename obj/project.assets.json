@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/karim/Desktop/Umaia/LEI/1ºAno/2ºSemestre/Algoritmos e Estruturas de Dados - Mário Ricardo de Novais Henriques/Trabalho 2/RegistroAutomovel_V1/RegistroAutomovel_V1.csproj",
+      "projectUniqueName": "/Users/karim/Desktop/Umaia/LEI/1ºAno/2ºSemestre/Algoritmos e Estruturas de Dados - Mário Ricardo de Novais Henriques/Trabalho 2/RegistroAutomovel/RegistroAutomovel_V1.csproj",
       "projectName": "RegistroAutomovel_V1",
-      "projectPath": "/Users/karim/Desktop/Umaia/LEI/1ºAno/2ºSemestre/Algoritmos e Estruturas de Dados - Mário Ricardo de Novais Henriques/Trabalho 2/RegistroAutomovel_V1/RegistroAutomovel_V1.csproj",
+      "projectPath": "/Users/karim/Desktop/Umaia/LEI/1ºAno/2ºSemestre/Algoritmos e Estruturas de Dados - Mário Ricardo de Novais Henriques/Trabalho 2/RegistroAutomovel/RegistroAutomovel_V1.csproj",
       "packagesPath": "/Users/karim/.nuget/packages/",
-      "outputPath": "/Users/karim/Desktop/Umaia/LEI/1ºAno/2ºSemestre/Algoritmos e Estruturas de Dados - Mário Ricardo de Novais Henriques/Trabalho 2/RegistroAutomovel_V1/obj/",
+      "outputPath": "/Users/karim/Desktop/Umaia/LEI/1ºAno/2ºSemestre/Algoritmos e Estruturas de Dados - Mário Ricardo de Novais Henriques/Trabalho 2/RegistroAutomovel/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/karim/.nuget/NuGet/NuGet.Config"
